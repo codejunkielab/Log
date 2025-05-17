@@ -1,13 +1,13 @@
-# Tandbox.Log
+# CodeJunkie.Log
 
 The `Log` library provides a flexible and efficient logging framework for .NET applications. It supports multiple log levels, customizable log formats, and various output destinations.
 
 ## Installation
 
-Install the latest version of the `Tandbox.Log` package from NuGet:
+Install the latest version of the `CodeJunkie.Log` package from NuGet:
 
 ```sh
-dotnet add package Tandbox.Log
+dotnet add package CodeJunkie.Log
 ```
 ## Features
 
@@ -35,7 +35,7 @@ The main logging class that provides methods for logging messages at various lev
 Here is a quick example of how to use the `Log` library:
 
 ```csharp
-using Tandbox.Log;
+using CodeJunkie.Log;
 
 class Program
 {
@@ -59,4 +59,4 @@ class Program
 
 ## Namespace
 
-Tandbox.Log
+CodeJunkie.Log

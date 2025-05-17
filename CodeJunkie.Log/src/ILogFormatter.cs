@@ -1,9 +1,9 @@
-﻿namespace Tandbox.Log;
+namespace CodeJunkie.Log;
 
 using System;
 
 /// <summary>
-/// Optional interface providing log-message formatting to <see cref="ILog"/>.
+/// Optional interface providing log-message formatting to <see cref="Log"/>.
 /// </summary>
 public interface ILogFormatter {
   /// <summary>
@@ -20,6 +20,6 @@ public interface ILogFormatter {
   /// <param name="logName">The name of the logger.</param>
   /// <param name="level">The log level.</param>
   /// <param name="message">The log message.</param>
-  /// <param name="exception"></param>
-  string FormatMessage(string logName, Level level, string message, Exception exceptoin);
+  /// <param name="exception">The exception to log.</param>
+  string FormatMessage(string logName, Level level, string message, Exception exception);
 }

@@ -1,4 +1,4 @@
-﻿namespace Tandbox.Log;
+namespace CodeJunkie.Log;
 
 using System;
 

@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>preview</LangVersion>
+    <Authors>codejunkie</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <CopyAllFiles>true</CopyAllFiles>
+    <RootNamespace>CodeJunkie.Log</RootNamespace>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <OutputPath>./nupkg</OutputPath>
+    <DebugType>portable</DebugType>
+    <Description>
+      Logging interface and implementation for C# applications and libraries.
+    </Description>
+    <Copyright>© 2025 CodeJunkie</Copyright>
+    <PackageId>CodeJunkie.Log</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl></PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="\" />
+    <None Include="../LICENSE" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

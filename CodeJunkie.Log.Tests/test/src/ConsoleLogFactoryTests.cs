@@ -1,6 +1,6 @@
-﻿namespace Tandbox.Log.Tests;
+namespace CodeJunkie.Log.Tests;
 
-using Tandbox.Log;
+using CodeJunkie.Log;
 using System;
 using Shouldly;
 using Xunit;

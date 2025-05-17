@@ -1,9 +1,9 @@
-﻿namespace Tandbox.Log;
+namespace CodeJunkie.Log;
 
 using System;
 
 /// <summary>
-/// Log class.
+/// Represents a logger that provides methods for logging messages at various levels of severity.
 /// This class is not thread-safe.
 /// </summary>
 public sealed class Log {
@@ -12,13 +12,43 @@ public sealed class Log {
   private ILogFormatter _formatter;
   private ILogWriter _writer;
 
+  /// <summary>
+  /// Gets the name of the logger.
+  /// </summary>
   public string Name => _name;
+
+  /// <summary>
+  /// Gets a value indicating whether debug-level logging is enabled.
+  /// </summary>
   public bool IsDebugEnabled => IsEnabled(Level.Debug);
+
+  /// <summary>
+  /// Gets a value indicating whether info-level logging is enabled.
+  /// </summary>
   public bool IsInfoEnabled => IsEnabled(Level.Info);
+
+  /// <summary>
+  /// Gets a value indicating whether warn-level logging is enabled.
+  /// </summary>
   public bool IsWarnEnabled => IsEnabled(Level.Warn);
+
+  /// <summary>
+  /// Gets a value indicating whether error-level logging is enabled.
+  /// </summary>
   public bool IsErrorEnabled => IsEnabled(Level.Error);
+
+  /// <summary>
+  /// Gets a value indicating whether fatal-level logging is enabled.
+  /// </summary>
   public bool IsFatalEnabled => IsEnabled(Level.Fatal);
 
+  /// <summary>
+  /// Initializes a new instance of the <see cref="Log"/> class.
+  /// </summary>
+  /// <param name="name">The name of the logger.</param>
+  /// <param name="logFactory">The factory that created this logger.</param>
+  /// <param name="logFormatter">The formatter used to format log messages.</param>
+  /// <param name="logWriter">The writer used to output log messages.</param>
   public Log(string name,
              ILogFactory logFactory,
              ILogFormatter logFormatter,
@@ -30,7 +60,7 @@ public sealed class Log {
   }
 
   /// <summary>
-  /// Debug level log information.
+  /// Logs a debug-level message.
   /// </summary>
   /// <param name="message">The message to log.</param>
   public void Debug(string message) {
@@ -41,7 +71,7 @@ public sealed class Log {
   }
 
   /// <summary>
-  /// Info level log information.
+  /// Logs an info-level message.
   /// </summary>
   /// <param name="message">The message to log.</param>
   public void Info(string message) {
@@ -52,7 +82,7 @@ public sealed class Log {
   }
 
   /// <summary>
-  /// Warn level log information.
+  /// Logs a warn-level message.
   /// </summary>
   /// <param name="message">The message to log.</param>
   public void Warn(string message) {
@@ -63,7 +93,7 @@ public sealed class Log {
   }
 
   /// <summary>
-  /// Error level log information.
+  /// Logs an error-level message.
   /// </summary>
   /// <param name="message">The message to log.</param>
   public void Error(string message) {
@@ -74,7 +104,7 @@ public sealed class Log {
   }
 
   /// <summary>
-  /// Fatal level log information.
+  /// Logs a fatal-level message.
   /// </summary>
   /// <param name="message">The message to log.</param>
   public void Fatal(string message) {
@@ -84,6 +114,11 @@ public sealed class Log {
     _writer.Fatal(_formatter.FormatMessage(_name, Level.Fatal, message));
   }
 
+  /// <summary>
+  /// Determines whether logging is enabled for the specified level.
+  /// </summary>
+  /// <param name="level">The logging level to check.</param>
+  /// <returns><c>true</c> if logging is enabled for the specified level; otherwise, <c>false</c>.</returns>
   private bool IsEnabled(Level level) {
     return level >= _factory.Level;
   }

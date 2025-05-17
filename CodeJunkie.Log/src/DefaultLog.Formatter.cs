@@ -1,9 +1,9 @@
-﻿namespace Tandbox.Log;
+namespace CodeJunkie.Log;
 
 using System;
 
 /// <summary>
-/// Optional interface providing log-message formatting to <see cref="ILog"/>.
+/// Optional interface providing log-message formatting to <see cref="Log"/>.
 /// </summary>
 public sealed class DefaultLogFormatter : ILogFormatter {
   /// <inheritdoc />
