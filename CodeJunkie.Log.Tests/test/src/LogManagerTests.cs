@@ -1,8 +1,7 @@
 namespace CodeJunkie.Log.Tests;
 
 using CodeJunkie.Log;
-using LightMock;
-using LightMock.Generator;
+using Moq;
 using Shouldly;
 using System;
 using Xunit;
@@ -13,7 +12,7 @@ public class LogManagerTests {
   public LogManagerTests() {
     _mockFactory = new Mock<ILogFactory>();
 
-    LogManager.Registry(null!); // Factoryをnullにして、デフォルトのFactoryを使用
+    LogManager.Registry(null!); // Set factory to null to use the default factory
   }
 
   [Fact]
