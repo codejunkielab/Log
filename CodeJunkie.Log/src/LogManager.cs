@@ -56,4 +56,11 @@ public static class LogManager {
 
     _factory = factory;
   }
+
+  /// <summary>
+  /// Resets the LogManager to its default state, removing any custom factory that has been registered.
+  /// </summary>
+  public static void Reset() {
+    _factory = default!;
+  }
 }

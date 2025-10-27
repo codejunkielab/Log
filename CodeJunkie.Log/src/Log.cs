@@ -1,6 +1,7 @@
 namespace CodeJunkie.Log;
 
 using System;
+using System.Diagnostics;
 
 /// <summary>
 /// Represents a logger that provides methods for logging messages at various levels of severity.
@@ -63,6 +64,8 @@ public sealed class Log {
   /// Logs a debug-level message.
   /// </summary>
   /// <param name="message">The message to log.</param>
+  [Conditional("CODEJUNKIE_LOG")]
+  [Conditional("CODEJUNKIE_LOG_DEBUG")]
   public void Debug(string message) {
     if (_writer == null || !IsDebugEnabled)
       return;
@@ -74,6 +77,9 @@ public sealed class Log {
   /// Logs an info-level message.
   /// </summary>
   /// <param name="message">The message to log.</param>
+  [Conditional("CODEJUNKIE_LOG")]
+  [Conditional("CODEJUNKIE_LOG_DEBUG")]
+  [Conditional("CODEJUNKIE_LOG_INFO")]
   public void Info(string message) {
     if (_writer == null || !IsInfoEnabled)
       return;
@@ -85,6 +91,10 @@ public sealed class Log {
   /// Logs a warn-level message.
   /// </summary>
   /// <param name="message">The message to log.</param>
+  [Conditional("CODEJUNKIE_LOG")]
+  [Conditional("CODEJUNKIE_LOG_DEBUG")]
+  [Conditional("CODEJUNKIE_LOG_INFO")]
+  [Conditional("CODEJUNKIE_LOG_WARN")]
   public void Warn(string message) {
     if (_writer == null || !IsWarnEnabled)
       return;
@@ -96,6 +106,11 @@ public sealed class Log {
   /// Logs an error-level message.
   /// </summary>
   /// <param name="message">The message to log.</param>
+  [Conditional("CODEJUNKIE_LOG")]
+  [Conditional("CODEJUNKIE_LOG_DEBUG")]
+  [Conditional("CODEJUNKIE_LOG_INFO")]
+  [Conditional("CODEJUNKIE_LOG_WARN")]
+  [Conditional("CODEJUNKIE_LOG_ERROR")]
   public void Error(string message) {
     if (_writer == null || !IsErrorEnabled)
       return;
@@ -107,6 +122,12 @@ public sealed class Log {
   /// Logs a fatal-level message.
   /// </summary>
   /// <param name="message">The message to log.</param>
+  [Conditional("CODEJUNKIE_LOG")]
+  [Conditional("CODEJUNKIE_LOG_DEBUG")]
+  [Conditional("CODEJUNKIE_LOG_INFO")]
+  [Conditional("CODEJUNKIE_LOG_WARN")]
+  [Conditional("CODEJUNKIE_LOG_ERROR")]
+  [Conditional("CODEJUNKIE_LOG_FATAL")]
   public void Fatal(string message) {
     if (_writer == null || !IsFatalEnabled)
       return;
